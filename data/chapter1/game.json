@@ -1,0 +1,317 @@
+{
+  "start": "1",
+  "music": "sounds/music_test.mp3",
+  "panels": [
+    {
+      "id": "1",
+      "image": "images/Slide1.JPG",
+	  "sound": "sounds/bird.wav",
+      "left": ["NEXT", "2"],
+      "right": ["NEXT", "2"]
+    },
+    {
+      "id": "2",
+      "image": "images/Slide2.JPG",
+      "left": ["THE REGAL", "3"],
+      "right": ["THE REGAL", "3"]
+    },
+    {
+      "id": "3",
+      "image": "images/Slide3.JPG",
+      "sound": "sounds/cafe.wav",
+      "left": ["NEXT", "4"],
+      "right": ["NEXT", "4"]
+    },
+    {
+      "id": "4",
+      "image": "images/Slide4.JPG",
+      "left": ["Dr DAVE", "5"],
+      "right": ["Dr DAVE", "5"]
+    },
+    {
+      "id": "5",
+      "image": "images/Slide5.JPG",
+      "sound": "sounds/surgery.mp3",
+      "left": ["laparotomy", "6"],
+      "right": ["laparotomy", "6"]
+    },
+	{
+      "id": "6",
+      "image": "images/Slide6.JPG",
+      "left": ["ALARM", "7"],
+      "right": ["ALARM", "7"]
+    },
+	{
+      "id": "7",
+      "image": "images/Slide7.JPG",
+      "sound": "sounds/bleep.mp3",
+      "left": ["NEXT", "8"],
+      "right": ["NEXT", "8"]
+    },
+	{
+      "id": "8",
+      "image": "images/Slide8.JPG",
+      "left": ["A&E", "9"],
+      "right": ["A&E", "9"]
+    },
+	    {
+      "id": "9",
+      "image": "images/Slide9.JPG",
+      "sound": "sounds/emergency.wav",
+      "left": ["TRIAGE", "10"],
+      "right": ["TRIAGE", "10"]
+    },
+	    {
+      "id": "10",
+      "image": "images/Slide10.JPG",
+      "left": ["CHARTS", "11"],
+      "right": ["CHARTS", "11"]
+    },
+	    {
+      "id": "11",
+      "image": "images/Slide11.JPG",
+      "sound": "sounds/pc.wav",
+      "left": ["A 15-year-old girl with vomiting and low abdominal pain", "12"],
+      "right": ["A 36-year-old man with cellulitis", "29"]
+    },
+	    {
+      "id": "12",
+      "image": "images/Slide12.JPG",
+      "left": ["SAMPLE", "13"],
+      "right": ["SAMPLE", "13"]
+    },
+	    {
+      "id": "13",
+      "image": "images/Slide13.JPG",
+      "left": ["VISIT MAGGIE", "14"],
+      "right": ["VISIT MAGGIE", "14"]
+    },
+	    {
+      "id": "14",
+      "image": "images/Slide14.JPG",
+      "sound": "sounds/curtains.wav",
+      "left": ["Give her prochlorperazine", "15"],
+      "right": ["give her ondansetron", "48"]
+    },
+	    {
+      "id": "15",
+      "image": "images/Slide15.JPG",
+      "sound": "sounds/pills.wav",
+      "left": ["OBSERVE", "16"],
+      "right": ["OBSERVE", "16"]
+    },
+	    {
+      "id": "16",
+      "image": "images/Slide16.JPG",
+      "left": ["EXAMINE", "19"],
+      "right": ["HISTORY", "17"]
+    },
+	    {
+      "id": "17",
+      "image": "images/Slide17.JPG",
+      "left": ["MORE DETAILS", "18"],
+      "right": ["MORE DETAILS", "18"]
+    },
+	    {
+      "id": "18",
+      "image": "images/Slide18.JPG",
+      "left": ["EXAMINE", "19"],
+      "right": ["RADIOLOGICAL TESTS", "19"]
+    },
+	    {
+      "id": "19",
+      "image": "images/Slide19.JPG",
+      "left": ["RADIOLOGICAL TESTS", "20"],
+      "right": ["DRE", "47"]
+    },
+	    {
+      "id": "20",
+      "image": "images/Slide20.JPG",
+      "sound": "sounds/cellphone.m4a",
+      "left": ["plain film ", "46"],
+      "right": ["ultrasound abdomen", "21"]
+    },
+	    {
+      "id": "21",
+      "image": "images/Slide21.JPG",
+      "sound": "sounds/night.wav",
+      "left": ["DINNER", "22"],
+      "right": ["DINNER", "22"]
+    },
+	    {
+      "id": "22",
+      "image": "images/Slide22.JPG",
+      "sound": "sounds/cellphone.m4a",
+      "left": ["ANSWER", "23"],
+      "right": ["ANSWER", "23"]
+    },
+	    {
+      "id": "23",
+      "image": "images/Slide23.JPG",
+      "left": ["confront Maggie privately", "24"],
+      "right": ["confront Maggie publicly", "41"]
+    },
+	    {
+      "id": "24",
+      "image": "images/Slide24.JPG",
+      "left": ["TACTICAL", "25"],
+      "right": ["TACTICAL", "25"]
+    },
+	    {
+      "id": "25",
+      "image": "images/Slide25.JPG",
+      "sound": "sounds/curtains.wav",
+      "left": ["stay while she tells her mother", "26"],
+      "right": ["don't tell mom", "36"]
+    },
+	    {
+      "id": "26",
+      "image": "images/Slide26.JPG",
+      "left": ["The truth", "27"],
+      "right": ["The truth", "27"]
+    },
+	    {
+      "id": "27",
+      "image": "images/Slide27.JPG",
+      "left": ["DISCHARGE", "28"],
+      "right": ["DISCHARGE", "28"]
+    },
+	    {
+      "id": "28",
+      "image": "images/Slide28.JPG",
+      "sound": "sounds/car.wav",
+      "left": ["EXIT", "#exit"],
+      "right": ["RESTART", "#restart"]
+    },
+	    {
+      "id": "29",
+      "image": "images/Slide29.JPG",
+      "left": ["EXAMINE", "30"],
+      "right": ["EXAMINE", "30"]
+    },
+	    {
+      "id": "30",
+      "image": "images/Slide30.JPG",
+      "sound": "sounds/wistle.wav",
+      "left": ["TEASE", "31"],
+      "right": ["TEASE", "31"]
+    },
+	    {
+      "id": "31",
+      "image": "images/Slide31.JPG",
+      "left": ["PERSIST", "32"],
+      "right": ["LEAVE", "34"]
+    },
+	    {
+      "id": "32",
+      "image": "images/Slide32.JPG",
+      "left": ["BITCH", "33"],
+      "right": ["BITCH", "33"]
+    },
+	    {
+      "id": "33",
+      "image": "images/Slide33.JPG",
+      "sound": "sounds/cellphone.m4a",
+      "left": ["SHIT", "34"],
+      "right": ["SHIT", "34"]
+    },
+	    {
+      "id": "34",
+      "image": "images/Slide34.JPG",
+      "left": ["LEAVE", "35"],
+      "right": ["LEAVE", "35"]
+    },
+	    {
+      "id": "35",
+      "image": "images/Slide35.JPG",
+      "sound": "sounds/angrywoman.wav",
+      "left": ["Go and see the girl", "12"],
+      "right": ["Go and see the girl", "12"]
+    },
+	    {
+      "id": "36",
+      "image": "images/Slide36.JPG",
+      "left": ["NEXT", "37"],
+      "right": ["NEXT", "37"]
+    },
+	    {
+      "id": "37",
+      "image": "images/Slide37.JPG",
+      "sound": "sounds/door.wav",
+      "left": ["4 weeks later", "38"],
+      "right": ["4 weeks later", "38"]
+    },
+	    {
+      "id": "38",
+      "image": "images/Slide38.JPG",
+      "sound": "sounds/yelling.mp3",
+      "left": ["OOps", "39"],
+      "right": ["OOps", "39"]
+    },
+	    {
+      "id": "39",
+      "image": "images/Slide39.JPG",
+      "left": ["FUCK", "40"],
+      "right": ["FUCK", "40"]
+    },
+	    {
+      "id": "40",
+      "image": "images/Slide40.JPG",
+      "left": ["EXIT", "#exit"],
+      "right": ["RESTART", "#restart"]
+    },
+	    {
+      "id": "41",
+      "image": "images/Slide41.JPG",
+      "left": ["What the hell", "42"],
+      "right": ["What the hell", "42"]
+    },
+	    {
+      "id": "42",
+      "image": "images/Slide42.JPG",
+      "sound": "sounds/cry.wav",
+      "left": ["NEXT", "43"],
+      "right": ["NEXT", "43"]
+    },
+	    {
+      "id": "43",
+      "image": "images/Slide43.JPG",
+      "left": ["LEAVE", "44"],
+      "right": ["LEAVE", "44"]
+    },
+	    {
+      "id": "44",
+      "image": "images/Slide44.JPG",
+      "sound": "sounds/angrywoman.wav",
+      "left": ["CRAP", "45"],
+      "right": ["CRAP", "45"]
+    },
+	    {
+      "id": "45",
+      "image": "images/Slide45.JPG",
+      "sound": "sounds/yelling.mp3",
+      "left": ["FUCK", "40"],
+      "right": ["FUCK", "40"]
+    },
+	    {
+      "id": "46",
+      "image": "images/Slide46.JPG",
+      "left": ["WAIT", "22"],
+      "right": ["WAIT", "22"]
+    },
+	    {
+      "id": "47",
+      "image": "images/Slide47.JPG",
+      "sound": "sounds/surprise.wav",
+      "left": ["SHIT", "45"],
+      "right": ["SHIT", "45"]
+    },
+	    {
+      "id": "48",
+      "image": "images/Slide48.JPG",
+      "sound": "sounds/pills.wav",
+      "left": ["OBSERVE", "16"],
+      "right": ["OBSERVE", "16"]
+    }
+  ]
+}

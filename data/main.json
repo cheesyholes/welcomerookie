@@ -1,0 +1,68 @@
+{
+  "a_width": 4,
+  "a_height": 1,
+  "min_lr": 20,
+  "min_tb": 10,
+  "inbet": 0.1,
+  "zoom_in": 1.25,
+  "shift_x": 10,
+  "font": "gameFont.ttf",
+  "font_perc": 0.20,
+  "font_color": "#EDDA0D",
+  "shade_left": "shade_left.png",
+  "shade_right": "shade_right.png",
+  "menu_sound": "menu/choice.wav",
+  "select_sound": "menu/select.wav",
+  "credits":[
+    {
+      "title": "Game By",
+      "name": ["Cheesy Holes"]
+    },
+    {
+      "title": "Story By",
+      "name": ["Omar Shoukry"]
+    },
+    {
+      "title": "Engine By",
+      "name": ["Ahmed Khalifa"]
+    },
+    {
+      "title": "Art By",
+      "name": ["Artist Name1", "Artist Name2"]
+    },
+    {
+      "title": "Font By",
+      "name": ["Font Designer Name"]
+    },
+    {
+      "title": "Sound By",
+      "name": ["Sound Designer Name"]
+    },
+    {
+      "title": "Music By",
+      "name": ["Music Designer Name"]
+    },
+    {
+      "title": "Testing By",
+      "name": ["Tester Name1", "Tester Name2", "Tester Name3", "Tester Name4"]
+    }
+  ],
+  "chapters":[
+    {
+      "picture": "menu/Slide28.JPG",
+      "folder": "chapter1/"
+    },
+    {
+      "picture": "menu/Slide2.JPG",
+      "folder": "chapter1/"
+    },
+    {
+      "picture": "menu/Slide8.JPG",
+      "folder": "chapter1/"
+    },
+    {
+      "picture": "menu/Slide13.JPG",
+      "folder": "chapter1/"
+    }
+  ]
+}

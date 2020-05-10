@@ -1,0 +1,154 @@
+<html>
+  <head>
+    <title>Welcome Rookie</title>
+    <style>
+      body{
+        background-color: #000000;
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+        user-select: none;
+      }
+      .panel{
+        position: absolute;
+        overflow: hidden;
+        background-color: #000000;
+        transition: all 0.8s;
+      }
+      .creditline{
+        position: absolute;
+        text-align: center;
+        width: 100%;
+      }
+      .white{
+        background-color: #000000;
+        z-index: 1000;
+      }
+      .text{
+        position: absolute;
+        display: table;
+        transition: all 0.5s;
+        opacity: 0;
+      }
+      .shading{
+        position: absolute;
+        transition: all 0.5s;
+        opacity: 0;
+      }
+      .image{
+        position: absolute;
+        transition: all 0.5s;
+      }
+      #lefttext{
+        display: table-cell;
+        text-align: left;
+        vertical-align: middle;
+      }
+      #righttext{
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+      }
+      #loading{
+        position: fixed;
+        display: table;
+        color: #FFFFFF;
+        background-color: #000000;
+        font-size: xx-large;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        transition: all 0.5s;
+      }
+      #loadingtext{
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        font-family: loadingFont;
+      }
+      #menu{
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+      }
+      #credits{
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+      }
+      .menutext{
+        position: absolute;
+        transition: all 0.5s;
+        text-align: center;
+        width: 100%;
+        color: #FFFFFF;
+        background-color: #000000;
+      }
+      .menutext p{
+        display: inline-block;
+        margin: 0px;
+        float: center;
+      }
+
+      #story{
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+      }
+      #center{
+        position: absolute;
+        background-color: #000000;
+        overflow: hidden;
+      }
+      @font-face {
+        font-family: loadingFont;
+        src: url('data/MISTRAL.TTF');
+      }
+    </style>
+  </head>
+  <body>
+    <template>
+      <div class="panel">
+        <img class="image"></img>
+        <img id="leftshading" class="shading"></img>
+        <img id="rightshading" class="shading"></img>
+        <div id="" class="text"><p id="lefttext">PREVIOUS<p></div>
+        <div id="" class="text"><p id="righttext">NEXT<p></div>
+      </div>
+    </template>
+    <template>
+      <div class="creditline">
+        <div id="title">GAMEPLAY BY</div>
+        <div id="names">AHMED KHALIFA</div>
+      </div>
+    </template>
+    <div id="loading">
+      <p id="loadingtext">loading</p>
+    </div>
+    <div id="menu">
+      <div id="center">
+        <div class="menutext" id="gamename"><p>WELCOME ROOKIE</p></div>
+        <div class="menutext" id="gamestart"><p>START STORY</p></div>
+        <div class="menutext" id="gamecredits"><p>CREDITS</p></div>
+      </div>
+    </div>
+    <div id="credits">
+      <div id="center">
+      </div>
+      <div class="menutext" id="gameback"><p>EXIT</p></div>
+    </div>
+    <div id="story">
+      <div id="center"></div>
+    </div>
+    <script type="text/javascript" src="menu_animation.js"></script>
+    <script type="text/javascript" src="story_engine.js"></script>
+    <script type="text/javascript" src="credits_animation.js"></script>
+    <script type="text/javascript" src="loader.js"></script>
+    <script type="text/javascript" src="initialize.js"></script>
+    <script type="text/javascript" src="story_animation.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
