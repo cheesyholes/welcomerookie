@@ -26,7 +26,7 @@ class DataCache{
   }
 
   add_font(path){
-    if (!(path in this._loaded_data) && this._loaded_data.indexOf(path) == -1){
+    if (!(path in this._loaded_data) && this._load_fonts.indexOf(path) == -1){
       this._load_fonts.push(path);
     }
   }
