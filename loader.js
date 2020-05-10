@@ -8,25 +8,25 @@ class DataCache{
   }
 
   add_img(path){
-    if (!(path in this._loaded_data)){
+    if (!(path in this._loaded_data) && this._load_imgs.indexOf(path) == -1){
       this._load_imgs.push(path);
     }
   }
 
   add_sound(path){
-    if (!(path in this._loaded_data)){
+    if (!(path in this._loaded_data) && this._load_sounds.indexOf(path) == -1){
       this._load_sounds.push(path);
     }
   }
 
   add_json(path){
-    if (!(path in this._loaded_data)){
+    if (!(path in this._loaded_data) && this._load_json.indexOf(path) == -1){
       this._load_json.push(path);
     }
   }
 
   add_font(path){
-    if (!(path in this._loaded_data)){
+    if (!(path in this._loaded_data) && this._loaded_data.indexOf(path) == -1){
       this._load_fonts.push(path);
     }
   }
