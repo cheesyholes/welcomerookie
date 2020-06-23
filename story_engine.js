@@ -112,6 +112,7 @@ class Story{
     if(this.music != null){
       this.music.currentTime = 0;
       this.music.play();
+      this.music.volume = this.volume;
     }
   }
 

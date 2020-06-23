@@ -73,6 +73,7 @@ function add_panel(story){
       new_panel.style.bottom = "0px";
       setTimeout(function () {
         new_panel.style.left = '0px';
+        story.get_current_panel().play_sound();
       }, 500);
       break;
     case "right":
@@ -80,6 +81,7 @@ function add_panel(story){
       new_panel.style.bottom = "0px";
       setTimeout(function () {
         new_panel.style.right = '0px';
+        story.get_current_panel().play_sound();
       }, 500);
       break;
     case "alpha":
@@ -88,6 +90,7 @@ function add_panel(story){
       new_panel.style.opacity = 0;
       setTimeout(function () {
         new_panel.style.opacity = 1;
+        story.get_current_panel().play_sound();
       }, 500);
       break;
     case "zoom":
@@ -98,6 +101,7 @@ function add_panel(story){
       setTimeout(function () {
         new_panel.style.opacity = 1;
         new_panel.style.transform = "scale(1)";
+        story.get_current_panel().play_sound();
       }, 500);
       break;
     case "snap":
@@ -106,12 +110,14 @@ function add_panel(story){
       new_panel.style.visibility = "hidden";
       setTimeout(function () {
         new_panel.style.visibility = "visible";
+        story.get_current_panel().play_sound();
       }, 600);
       break;
     default:
       new_panel.style.bottom = -((story.main_config['a_height'] + story.main_config['inbet']) * story.main_config['res']) + "px";
       setTimeout(function () {
         new_panel.style.bottom = "0px";
+        story.get_current_panel().play_sound();
       }, 10);
       break;
   }
@@ -226,6 +232,5 @@ function add_panel(story){
     }
   });
 
-  story.get_current_panel().play_sound();
   document.querySelector("#story #center").appendChild(new_panel);
 }
