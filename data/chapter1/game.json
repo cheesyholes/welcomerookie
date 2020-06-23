@@ -6,7 +6,7 @@
     {
       "id": "1",
       "image": "images/Slide1.JPG",
-	  "sound": "sounds/bird.wav",
+	    "sound": "sounds/bird.wav",
       "left": ["NEXT", "2"],
       "right": ["NEXT", "2"]
     },
