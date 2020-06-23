@@ -1,8 +1,8 @@
-function add_credits(data_path, config){
+function add_credits(config){
   let center = document.querySelector("#credits #center");
   for(let c of config.credits){
     let new_credit = document.getElementsByTagName("template")[1].content.cloneNode(true).querySelector('.creditline');
-    new_credit.style.fontFamily = config["font"];
+    new_credit.style.fontFamily = "game_font";
     new_credit.style.color = "#FFFFFF";
     new_credit.children[0].innerHTML = c.title;
     new_credit.children[0].style.fontSize = Math.floor(config["font_perc"] * config["res"] / 2) + "px";
@@ -24,7 +24,7 @@ function add_credits(data_path, config){
         numberOfLines += t.name.length + 2;
       }
       new_credit.style.top = config["center_height"] + numberOfLines * config["font_perc"] * config["res"] + "px";
-      let id = setInterval(moveUp, 10);
+      let id = setInterval(moveUp, 20);
       function moveUp(){
         let current = parseInt(new_credit.style.top.split("px")[0]);
         new_credit.style.top = (current - 1) + "px";
@@ -48,7 +48,7 @@ function add_credits(data_path, config){
     exit.style.transform = "scale(1)";
   });
   exit.children[0].addEventListener("click", function(e){
-    data_loader.get_data(data_path + config['select_sound']).play();
+    loader.getFile('menu_select').element.play();
     exit_credits(config);
   });
 }

@@ -1,6 +1,7 @@
 {
   "start": "1",
   "music": "sounds/music_test.mp3",
+  "volume": 0.8,
   "panels": [
     {
       "id": "1",

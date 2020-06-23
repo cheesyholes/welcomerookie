@@ -1,10 +1,22 @@
 class Panel{
-  constructor(ch_path, p, main_config){
+  constructor(main_config, p){
     this.id = p.id;
-    this.img = data_loader.get_data(ch_path + p.image).src;
+    this.img = loader.getFile("chapter/" + p.image).img.src;
     this.snd = null;
     if(p.sound){
-      this.snd = data_loader.get_data(ch_path + p.sound);
+      this.snd = loader.getFile("chapter/" + p.sound).element;
+    }
+    this.volume = 1;
+    if(p.volume){
+      this.volume = parseFloat(p.volume);
+    }
+    this.transition = "bottom";
+    if(p.transition){
+      this.transition = p.transition;
+    }
+    this.shake = 0;
+    if(p.shake){
+      this.shake = parseInt(p.shake);
     }
     this.left = {
       id: p.left[1],
@@ -43,6 +55,13 @@ class Panel{
     }
   }
 
+  stop_sound(){
+    if(this.snd != null){
+      this.snd.pause();
+      this.snd.currentTime = 0;
+    }
+  }
+
   get_left_text(){
     return this.left.text;
   }
@@ -69,23 +88,24 @@ class Panel{
 }
 
 class Story{
-  constructor(data_path, ch_path, main_config, ch_config){
-    this.data_path = data_path;
-    this.ch_path = ch_path;
+  constructor(main_config, ch_config){
     this.main_config = main_config;
-    this.start_index = ch_config["start"];
-    this.current_index = ch_config["start"];
+    this.ch_config = ch_config;
+
+    this.start_index = this.ch_config["start"];
+    this.current_index = this.ch_config["start"];
+    this.volume = parseFloat(this.ch_config["volume"]);
     this.panels = {};
-    for(let p of ch_config["panels"]){
-      this.panels[p.id] = new Panel(ch_path, p, main_config);
+    for(let p of this.ch_config["panels"]){
+      this.panels[p.id] = new Panel(this.main_config, p);
     }
     this.music = null;
     if(ch_config["music"]){
-      this.music = data_loader.get_data(ch_path + ch_config["music"]);
+      this.music = loader.getFile("chapter/" + ch_config["music"]).element;
       this.music.loop = true;
     }
-    this.shade_left = data_loader.get_data(data_path + main_config["shade_left"]).src;
-    this.shade_right = data_loader.get_data(data_path + main_config["shade_right"]).src;
+    this.shade_left = loader.getFile("shade_left").img.src;
+    this.shade_right = loader.getFile("shade_right").img.src;
   }
 
   play_music(){
@@ -96,8 +116,26 @@ class Story{
   }
 
   stop_music(){
-    this.music.pause();
-    this.music.currentTime = 0;
+    if(this.music != null){
+      this.music.pause();
+      this.music.currentTime = 0;
+    }
+  }
+
+  change_volume(value){
+    if(this.music != null){
+      let targetMusic = this.volume * value;
+      let smoothFunction = function () {
+        this.music.volume = Math.lerp(this.music.volume, targetMusic, 0.05);
+        if (Math.abs(this.music.volume - targetMusic) < 0.01) {
+          this.music.volume = targetMusic;
+        }
+        else {
+          setTimeout(smoothFunction, 50);
+        }
+      }.bind(this);
+      this.fade = setTimeout(smoothFunction, 50);
+    }
   }
 
   get_current_panel(){
@@ -114,17 +152,24 @@ class Story{
 
   go_left(){
     let p = this.get_current_panel();
+    p.stop_sound();
+    stopShake();
     if(p.left.id.indexOf("#") >= 0){
       if(p.left.id.indexOf("exit") >= 0){
-        exit_story(this.ch_path, this);
+        exit_story(this);
       }
       if(p.left.id.indexOf("restart") >= 0){
         this.current_index = this.start_index;
-        restart_story(this.data_path, this.ch_path, this.main_config, this);
+        this.change_volume(this.get_current_panel().volume);
+        restart_story(this);
       }
     }
     else{
       this.current_index = p.left.id;
+      this.change_volume(this.get_current_panel().volume);
+      if (this.get_current_panel().shake > 0){
+        startShake(this.get_current_panel().shake);
+      }
       return true;
     }
     return false;
@@ -132,17 +177,24 @@ class Story{
 
   go_right(){
     let p = this.get_current_panel();
+    p.stop_sound();
+    stopShake();
     if(p.right.id.indexOf("#") >= 0){
       if(p.right.id.indexOf("exit") >= 0){
-        exit_story(this.ch_path, this);
+        exit_story(this);
       }
       if(p.right.id.indexOf("restart") >= 0){
         this.current_index = this.start_index;
-        restart_story(this.data_path, this.ch_path, this.main_config, this);
+        this.change_volume(this.get_current_panel().volume);
+        restart_story(this);
       }
     }
     else{
       this.current_index = p.right.id;
+      this.change_volume(this.get_current_panel().volume);
+      if (this.get_current_panel().shake > 0) {
+        startShake(this.get_current_panel().shake);
+      }
       return true;
     }
     return false;

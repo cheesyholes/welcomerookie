@@ -2,17 +2,23 @@
   "a_width": 4,
   "a_height": 1,
   "min_lr": 20,
-  "min_tb": 10,
-  "inbet": 0.1,
+  "min_tb": 80,
+  "inbet": 0.08,
   "zoom_in": 1.25,
-  "shift_x": 10,
-  "font": "gameFont.ttf",
+  "shift_x": 5,
+  "shading_noeffect": 0.6,
+  "snap_percent": 0.7,
+  "mouse_sensitivity": 0,
+  "mouse_slow": 0,
+  "loading_text": "loading",
+  "loading_font": "MISTRAL.TFF",
+  "game_font": "gameFont.ttf",
   "font_perc": 0.20,
   "font_color": "#EDDA0D",
   "shade_left": "shade_left.png",
   "shade_right": "shade_right.png",
-  "menu_sound": "menu/choice.wav",
-  "select_sound": "menu/select.wav",
+  "menu_change": "menu/choice.wav",
+  "menu_select": "menu/select.wav",
   "credits":[
     {
       "title": "Game By",
@@ -50,18 +56,6 @@
   "chapters":[
     {
       "picture": "menu/Slide28.JPG",
-      "folder": "chapter1/"
-    },
-    {
-      "picture": "menu/Slide2.JPG",
-      "folder": "chapter1/"
-    },
-    {
-      "picture": "menu/Slide8.JPG",
-      "folder": "chapter1/"
-    },
-    {
-      "picture": "menu/Slide13.JPG",
       "folder": "chapter1/"
     }
   ]
