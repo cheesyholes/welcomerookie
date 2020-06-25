@@ -142,7 +142,9 @@ function add_panel(story){
     let current = Math.floor(new_panel.style.bottom.split("px")[0]);
     if(current == 0 && new_panel.ready){
       if(new_panel.single_choice){
+        new_panel.next = true;
         new_panel.style.cursor = "pointer";
+        new_panel.children[0].style.transform = "scale(" + story.main_config['zoom_in'] + ")";
       }
       else{
         if (!new_panel.first_time) {
@@ -191,6 +193,7 @@ function add_panel(story){
         else {
           new_panel.right = false;
           new_panel.left = false;
+          new_panel.next = false;
           new_panel.style.cursor = "default";
           new_panel.children[0].style.transform = "";
         }
@@ -216,7 +219,7 @@ function add_panel(story){
   new_panel.addEventListener("click", function(e){
     let current = Math.floor(new_panel.style.bottom.split("px")[0]);
     if(new_panel.ready && current == 0){
-      if(new_panel.single_choice){
+      if(new_panel.next){
         if(story.go_next()){
           story.main_config['next_entry'] = 0;
           new_panel.style.bottom = "1px";
