@@ -7,8 +7,8 @@
       "id": "1",
       "image": "images/Slide1.JPG",
 	    "sound": "sounds/bird.wav",
-      "left": ["NEXT", "2"],
-      "right": ["NEXT", "2"]
+      "left": ["NEW DAY", "2"],
+      "right": ["NEW DAY", "2"]
     },
     {
       "id": "2",
@@ -72,8 +72,8 @@
       "id": "11",
       "image": "images/Slide11.JPG",
       "sound": "sounds/pc.wav",
-      "left": ["A 15-year-old girl with vomiting and low abdominal pain", "12"],
-      "right": ["A 36-year-old man with cellulitis", "29"]
+      "left": ["15yr girl", "12"],
+      "right": ["36yr man", "29"]
     },
 	    {
       "id": "12",
@@ -91,8 +91,8 @@
       "id": "14",
       "image": "images/Slide14.JPG",
       "sound": "sounds/curtains.wav",
-      "left": ["Give her prochlorperazine", "15"],
-      "right": ["give her ondansetron", "48"]
+      "left": ["Prochlorperazine", "15"],
+      "right": ["Ondansetron", "48"]
     },
 	    {
       "id": "15",
@@ -110,27 +110,27 @@
 	    {
       "id": "17",
       "image": "images/Slide17.JPG",
-      "left": ["MORE DETAILS", "18"],
-      "right": ["MORE DETAILS", "18"]
+      "left": ["DETAILS", "18"],
+      "right": ["DETAILS", "18"]
     },
 	    {
       "id": "18",
       "image": "images/Slide18.JPG",
       "left": ["EXAMINE", "19"],
-      "right": ["RADIOLOGICAL TESTS", "19"]
+      "right": ["RADIOLOGY", "19"]
     },
 	    {
       "id": "19",
       "image": "images/Slide19.JPG",
-      "left": ["RADIOLOGICAL TESTS", "20"],
+      "left": ["RADIOLOGY", "20"],
       "right": ["DRE", "47"]
     },
 	    {
       "id": "20",
       "image": "images/Slide20.JPG",
       "sound": "sounds/cellphone.m4a",
-      "left": ["plain film ", "46"],
-      "right": ["ultrasound abdomen", "21"]
+      "left": ["plainfilm ", "46"],
+      "right": ["ultrasound , "21"]
     },
 	    {
       "id": "21",
@@ -149,8 +149,8 @@
 	    {
       "id": "23",
       "image": "images/Slide23.JPG",
-      "left": ["confront Maggie privately", "24"],
-      "right": ["confront Maggie publicly", "41"]
+      "left": ["private", "24"],
+      "right": ["public", "41"]
     },
 	    {
       "id": "24",
@@ -162,14 +162,14 @@
       "id": "25",
       "image": "images/Slide25.JPG",
       "sound": "sounds/curtains.wav",
-      "left": ["stay while she tells her mother", "26"],
+      "left": ["tell mom", "26"],
       "right": ["don't tell mom", "36"]
     },
 	    {
       "id": "26",
       "image": "images/Slide26.JPG",
-      "left": ["The truth", "27"],
-      "right": ["The truth", "27"]
+      "left": ["truth", "27"],
+      "right": ["truth", "27"]
     },
 	    {
       "id": "27",
@@ -226,8 +226,8 @@
       "id": "35",
       "image": "images/Slide35.JPG",
       "sound": "sounds/angrywoman.wav",
-      "left": ["Go and see the girl", "12"],
-      "right": ["Go and see the girl", "12"]
+      "left": ["girl", "12"],
+      "right": ["girl", "12"]
     },
 	    {
       "id": "36",
