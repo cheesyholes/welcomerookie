@@ -6,7 +6,7 @@
   "inbet": 0.08,
   "zoom_in": 1.25,
   "shift_x": 5,
-  "shading_noeffect": 1,
+  "shading_noeffect": 0.6,
   "snap_percent": 0.7,
   "mouse_sensitivity": 0,
   "mouse_slow": 0,
@@ -47,6 +47,10 @@
     {
       "title": "Sound Effects",
       "name": ["InspectorJ of Freesound.org", "Wlabarron of Freesound.org", "Durek of Freesound.org", "Bertiehs of Freesound.org"]
+    },
+    {
+	  "title": "Thank",
+      "name": ["You"]
     }
   ],
   "chapters":[
