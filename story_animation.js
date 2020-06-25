@@ -152,7 +152,7 @@ function add_panel(story){
       }
       new_panel.slow_down = story.main_config['mouse_slow'];
       let shadingPercentage = 2 * (e.offsetX - story.main_config['center_width'] / 2) / 
-        (story.main_config['center_width'] - 3 * story.main_config["snap_percent"] * story.main_config['res']);
+        (story.main_config['center_width'] - 2 * story.main_config["snap_percent"] * story.main_config['res']);
       shadingPercentage = Math.clamp(shadingPercentage, -1, 1);
       if (Math.abs(shadingPercentage) < story.main_config["shading_noeffect"]) {
         shadingPercentage = 0;

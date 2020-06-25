@@ -6,7 +6,7 @@
   "inbet": 0.08,
   "zoom_in": 1.25,
   "shift_x": 5,
-  "shading_noeffect": 0.6,
+  "shading_noeffect": 1,
   "snap_percent": 0.7,
   "mouse_sensitivity": 0,
   "mouse_slow": 0,
