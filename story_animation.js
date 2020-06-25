@@ -29,6 +29,7 @@ function stopShake(){
 function add_panel(story){
   let old_panels = document.getElementById('story').getElementsByClassName('panel');
   if(old_panels){
+    old_panels.ready = false;
     for(let p of old_panels){
       p.style.zIndex = "20";
     }
@@ -50,18 +51,21 @@ function add_panel(story){
   }
 
   let new_panel = document.getElementsByTagName("template")[0].content.cloneNode(true).querySelector('.panel');
+  new_panel.single_choice = story.get_current_panel().single_choice;
   new_panel.style.width = story.main_config['a_width'] * story.main_config['res'] + "px";
   new_panel.style.height = story.main_config['a_height'] * story.main_config['res'] + "px";
   new_panel.style.fontFamily = 'game_font';
   new_panel.children[0].src = story.get_current_panel().get_img();
-  new_panel.children[1].src = story.get_shade_left();
-  new_panel.children[2].src = story.get_shade_right();
-  new_panel.children[3].style.fontSize = Math.floor(story.get_current_panel().get_left_size() * story.main_config['res']) + "px";
-  new_panel.children[3].style.color = story.get_current_panel().get_left_color();
-  new_panel.children[3].children[0].innerHTML = story.get_current_panel().get_left_text();
-  new_panel.children[4].style.fontSize = Math.floor(story.get_current_panel().get_right_size() * story.main_config['res']) + "px";
-  new_panel.children[4].style.color = story.get_current_panel().get_right_color();
-  new_panel.children[4].children[0].innerHTML = story.get_current_panel().get_right_text();
+  if(!new_panel.single_choice){
+    new_panel.children[1].src = story.get_shade_left();
+    new_panel.children[2].src = story.get_shade_right();
+    new_panel.children[3].style.fontSize = Math.floor(story.get_current_panel().get_left_size() * story.main_config['res']) + "px";
+    new_panel.children[3].style.color = story.get_current_panel().get_left_color();
+    new_panel.children[3].children[0].innerHTML = story.get_current_panel().get_left_text();
+    new_panel.children[4].style.fontSize = Math.floor(story.get_current_panel().get_right_size() * story.main_config['res']) + "px";
+    new_panel.children[4].style.color = story.get_current_panel().get_right_color();
+    new_panel.children[4].children[0].innerHTML = story.get_current_panel().get_right_text();
+  }
   for(let c of new_panel.children){
     c.style.width = new_panel.style.width;
     c.style.height = new_panel.style.height;
@@ -137,62 +141,59 @@ function add_panel(story){
   let show_handler = function(e){
     let current = Math.floor(new_panel.style.bottom.split("px")[0]);
     if(current == 0 && new_panel.ready){
-      if (!new_panel.first_time) {
-        new_panel.mouseOffset = { x: e.offsetX, y: e.offsetY };
-        new_panel.first_time = true;
-      }
-      if (Math.abs(e.offsetX - new_panel.mouseOffset.x) + Math.abs(e.offsetY - new_panel.mouseOffset.y) < story.main_config["mouse_sensitivity"] && 
-        (e.offsetX < story.main_config["snap_percent"] * story.main_config['res'] || (story.main_config['a_width'] - story.main_config["snap_percent"]) * story.main_config['res'])){
-        new_panel.mouseOffset = { x: e.offsetX, y: e.offsetY };
-        return;
-      }
-      if(new_panel.slow_down > 0){
-        new_panel.slow_down -= 1;
-        return;
-      }
-      new_panel.slow_down = story.main_config['mouse_slow'];
-      let shadingPercentage = 2 * (e.offsetX - story.main_config['center_width'] / 2) / 
-        (story.main_config['center_width'] - 2 * story.main_config["snap_percent"] * story.main_config['res']);
-      shadingPercentage = Math.clamp(shadingPercentage, -1, 1);
-      if (Math.abs(shadingPercentage) < story.main_config["shading_noeffect"]) {
-        shadingPercentage = 0;
-      }
-
-      new_panel.children[1].style.opacity = Math.clamp(0.0 - 1 * shadingPercentage, 0, 1);
-      new_panel.children[2].style.opacity = Math.clamp(0.0 + 1 * shadingPercentage, 0, 1);
-
-      new_panel.children[3].style.opacity = Math.clamp(0.0 - 1 * shadingPercentage, 0, 1);
-      new_panel.children[3].style.filter = "grayscale(100%)";
-      new_panel.children[4].style.opacity = Math.clamp(0.0 + 1 * shadingPercentage, 0, 1);
-      new_panel.children[4].style.filter = "grayscale(100%)";
-
-      if (e.offsetX > (story.main_config['a_width'] - story.main_config["snap_percent"]) * story.main_config['res']){
+      if(new_panel.single_choice){
         new_panel.style.cursor = "pointer";
-        new_panel.right = true;
-        new_panel.left = false;
-        new_panel.children[0].style.transform = "translate(" + -story.main_config['shift_x'] + "%)";
-        // new_panel.children[2].style.opacity = 1;
-        // new_panel.children[4].style.opacity = 1;
-        new_panel.children[4].style.filter = "grayscale(0%)";
-      }
-      else if (e.offsetX < story.main_config["snap_percent"] * story.main_config['res']){
-        new_panel.style.cursor = "pointer";
-        new_panel.right = false;
-        new_panel.left = true;
-        new_panel.children[0].style.transform = "translate(" + story.main_config['shift_x'] + "%)";
-        // new_panel.children[1].style.opacity = 1;
-        // new_panel.children[3].style.opacity = 1;
-        new_panel.children[3].style.filter = "grayscale(0%)";
       }
       else{
-        new_panel.right = false;
-        new_panel.left = false;
-        new_panel.style.cursor = "default";
-        // new_panel.children[0].style.transform = "scale(" + story.main_config['zoom_in'] + ")";
-        new_panel.children[0].style.transform = "";
-        // for(let i=1; i<new_panel.children.length; i++){
-        //   new_panel.children[i].style.opacity = 0;
-        // }
+        if (!new_panel.first_time) {
+          new_panel.mouseOffset = { x: e.offsetX, y: e.offsetY };
+          new_panel.first_time = true;
+        }
+        if (Math.abs(e.offsetX - new_panel.mouseOffset.x) + Math.abs(e.offsetY - new_panel.mouseOffset.y) < story.main_config["mouse_sensitivity"] &&
+          (e.offsetX < story.main_config["snap_percent"] * story.main_config['res'] || (story.main_config['a_width'] - story.main_config["snap_percent"]) * story.main_config['res'])) {
+          new_panel.mouseOffset = { x: e.offsetX, y: e.offsetY };
+          return;
+        }
+        if (new_panel.slow_down > 0) {
+          new_panel.slow_down -= 1;
+          return;
+        }
+        new_panel.slow_down = story.main_config['mouse_slow'];
+        let shadingPercentage = 2 * (e.offsetX - story.main_config['center_width'] / 2) /
+          (story.main_config['center_width'] - 2 * story.main_config["snap_percent"] * story.main_config['res']);
+        shadingPercentage = Math.clamp(shadingPercentage, -1, 1);
+        if (Math.abs(shadingPercentage) < story.main_config["shading_noeffect"]) {
+          shadingPercentage = 0;
+        }
+
+        new_panel.children[1].style.opacity = Math.clamp(0.0 - 1 * shadingPercentage, 0, 1);
+        new_panel.children[2].style.opacity = Math.clamp(0.0 + 1 * shadingPercentage, 0, 1);
+
+        new_panel.children[3].style.opacity = Math.clamp(0.0 - 1 * shadingPercentage, 0, 1);
+        new_panel.children[3].style.filter = "grayscale(100%)";
+        new_panel.children[4].style.opacity = Math.clamp(0.0 + 1 * shadingPercentage, 0, 1);
+        new_panel.children[4].style.filter = "grayscale(100%)";
+
+        if (e.offsetX > (story.main_config['a_width'] - story.main_config["snap_percent"]) * story.main_config['res']) {
+          new_panel.style.cursor = "pointer";
+          new_panel.right = true;
+          new_panel.left = false;
+          new_panel.children[0].style.transform = "translate(" + -story.main_config['shift_x'] + "%)";
+          new_panel.children[4].style.filter = "grayscale(0%)";
+        }
+        else if (e.offsetX < story.main_config["snap_percent"] * story.main_config['res']) {
+          new_panel.style.cursor = "pointer";
+          new_panel.right = false;
+          new_panel.left = true;
+          new_panel.children[0].style.transform = "translate(" + story.main_config['shift_x'] + "%)";
+          new_panel.children[3].style.filter = "grayscale(0%)";
+        }
+        else {
+          new_panel.right = false;
+          new_panel.left = false;
+          new_panel.style.cursor = "default";
+          new_panel.children[0].style.transform = "";
+        }
       }
     }
     else{
@@ -215,18 +216,27 @@ function add_panel(story){
   new_panel.addEventListener("click", function(e){
     let current = Math.floor(new_panel.style.bottom.split("px")[0]);
     if(new_panel.ready && current == 0){
-      if(new_panel.right){
-        if(story.go_right()){
+      if(new_panel.single_choice){
+        if(story.go_next()){
           story.main_config['next_entry'] = 0;
           new_panel.style.bottom = "1px";
           add_panel(story);
         }
       }
-      else if(new_panel.left){
-        if(story.go_left()){
-          story.main_config['next_entry'] = 1;
-          new_panel.style.bottom = "1px";
-          add_panel(story);
+      else{
+        if (new_panel.right) {
+          if (story.go_right()) {
+            story.main_config['next_entry'] = 0;
+            new_panel.style.bottom = "1px";
+            add_panel(story);
+          }
+        }
+        else if (new_panel.left) {
+          if (story.go_left()) {
+            story.main_config['next_entry'] = 1;
+            new_panel.style.bottom = "1px";
+            add_panel(story);
+          }
         }
       }
     }

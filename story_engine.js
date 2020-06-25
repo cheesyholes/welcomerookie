@@ -18,30 +18,46 @@ class Panel{
     if(p.shake){
       this.shake = parseInt(p.shake);
     }
-    this.left = {
-      id: p.left[1],
-      text: p.left[0],
-      color: main_config["font_color"],
-      size: main_config["font_perc"]
-    };
-    if(p.left.length > 2){
-      this.left.size = p.left[2];
+    this.single_choice = p.next != undefined || p.left == undefined || p.right == undefined || p.left[0] == p.right[0];
+    if(this.single_choice){
+      this.next = "";
+      if (p.next != undefined){
+        this.next = p.next;
+      }
+      else if(p.left != undefined){
+        this.next = p.left[1];
+      }
+      else if(p.right != undefined){
+        this.next = p.right[1];
+      }
     }
-    if(p.left.length > 3){
-      this.left.color = p.left[3];
+    else{
+      this.left = {
+        id: p.left[1],
+        text: p.left[0],
+        color: main_config["font_color"],
+        size: main_config["font_perc"]
+      };
+      if (p.left.length > 2) {
+        this.left.size = p.left[2];
+      }
+      if (p.left.length > 3) {
+        this.left.color = p.left[3];
+      }
+      this.right = {
+        id: p.right[1],
+        text: p.right[0],
+        color: main_config["font_color"],
+        size: main_config["font_perc"]
+      };
+      if (p.right.length > 2) {
+        this.right.size = p.right[2];
+      }
+      if (p.right.length > 3) {
+        this.right.color = p.right[3];
+      }
     }
-    this.right = {
-      id: p.right[1],
-      text: p.right[0],
-      color: main_config["font_color"],
-      size: main_config["font_perc"]
-    };
-    if(p.right.length > 2){
-      this.right.size = p.right[2];
-    }
-    if(p.right.length > 3){
-      this.right.color = p.right[3];
-    }
+    
   }
 
   get_img(){
@@ -149,6 +165,31 @@ class Story{
 
   get_shade_right(){
     return this.shade_right;
+  }
+
+  go_next(){
+    let p = this.get_current_panel();
+    p.stop_sound();
+    stopShake();
+    if (p.next.indexOf("#") >= 0) {
+      if (p.next.indexOf("exit") >= 0) {
+        exit_story(this);
+      }
+      if (p.next.indexOf("restart") >= 0) {
+        this.current_index = this.start_index;
+        this.change_volume(this.get_current_panel().volume);
+        restart_story(this);
+      }
+    }
+    else {
+      this.current_index = p.next;
+      this.change_volume(this.get_current_panel().volume);
+      if (this.get_current_panel().shake > 0) {
+        startShake(this.get_current_panel().shake);
+      }
+      return true;
+    }
+    return false;
   }
 
   go_left(){
