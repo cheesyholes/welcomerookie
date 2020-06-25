@@ -46,8 +46,8 @@
       "id": "7",
       "image": "images/Slide7.JPG",
       "sound": "sounds/bleep.mp3",
-      "left": ["NEXT", "8"],
-      "right": ["NEXT", "8"]
+      "left": ["GO", "8"],
+      "right": ["GO", "8"]
     },
 	{
       "id": "8",
@@ -84,15 +84,15 @@
 	    {
       "id": "13",
       "image": "images/Slide13.JPG",
-      "left": ["VISIT MAGGIE", "14"],
-      "right": ["VISIT MAGGIE", "14"]
+      "left": ["MAGGIE", "14"],
+      "right": ["MAGGIE", "14"]
     },
 	    {
       "id": "14",
       "image": "images/Slide14.JPG",
       "sound": "sounds/curtains.wav",
-      "left": ["Prochlorperazine", "15"],
-      "right": ["Ondansetron", "48"]
+      "left": ["Compazine", "15"],
+      "right": ["Zofran", "48"]
     },
 	    {
       "id": "15",
@@ -117,7 +117,7 @@
       "id": "18",
       "image": "images/Slide18.JPG",
       "left": ["EXAMINE", "19"],
-      "right": ["RADIOLOGY", "19"]
+      "right": ["EXAMINE", "19"]
     },
 	    {
       "id": "19",
@@ -163,7 +163,7 @@
       "image": "images/Slide25.JPG",
       "sound": "sounds/curtains.wav",
       "left": ["tell mom", "26"],
-      "right": ["don't tell mom", "36"]
+      "right": ["lie", "36"]
     },
 	    {
       "id": "26",
@@ -239,8 +239,8 @@
       "id": "37",
       "image": "images/Slide37.JPG",
       "sound": "sounds/door.wav",
-      "left": ["4 weeks later", "38"],
-      "right": ["4 weeks later", "38"]
+      "left": ["Months later", "38"],
+      "right": ["Months later", "38"]
     },
 	    {
       "id": "38",
