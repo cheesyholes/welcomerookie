@@ -25,7 +25,7 @@
       "name": ["Cheesy Holes"]
     },
     {
-      "title": "Designed By",
+      "title": "Designed & Written By",
       "name": ["Omar Khaled"]
     },
     {
@@ -37,16 +37,12 @@
       "name": ["Gustav", "Adrian Iglesias"]
     },
     {
-      "title": "Written By",
-      "name": ["Omar Khaled"]
+	  "title": "Graphics by",
+      "name": ["Hussein Essam"]
     },
     {
       "title": "Music By",
       "name": ["Kevin MacLeod"]
-    },
-    {
-      "title": "Graphics Lead",
-      "name": ["Hussein Essam"]
     }
   ],
   "chapters":[
