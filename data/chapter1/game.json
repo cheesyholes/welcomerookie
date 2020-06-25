@@ -129,8 +129,8 @@
       "id": "20",
       "image": "images/Slide20.JPG",
       "sound": "sounds/cellphone.m4a",
-      "left": ["plainfilm ", "46"],
-      "right": ["ultrasound , "21"]
+      "left": ["plainfilm", "46"],
+      "right": ["ultrasound" , "21"]
     },
 	    {
       "id": "21",
@@ -264,8 +264,8 @@
 	    {
       "id": "41",
       "image": "images/Slide41.JPG",
-      "left": ["What the hell", "42"],
-      "right": ["What the hell", "42"]
+      "left": ["hell", "42"],
+      "right": ["hell", "42"]
     },
 	    {
       "id": "42",
