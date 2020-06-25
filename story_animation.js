@@ -36,16 +36,16 @@ function add_panel(story){
       setTimeout(function(){
         old_panels[0].style.bottom = story.main_config['center_height'] - story.main_config['a_height'] * story.main_config['res'] + 'px';
         old_panels[0].style.filter = "grayscale(100%)";
-      }, 10);
+      }, 50);
     }
     else if(old_panels.length > 1){
       setTimeout(function(){
         old_panels[0].style.bottom = story.main_config['center_height'] + story.main_config['a_height'] * story.main_config['res'] + story.main_config['inbet_pixels'] + 'px';
-      }, 10);
+      }, 50);
       setTimeout(function(){
         old_panels[1].style.bottom = story.main_config['center_height'] - story.main_config['a_height'] * story.main_config['res'] + 'px';
         old_panels[1].style.filter = "grayscale(100%)";
-      }, 10);
+      }, 50);
     }
   }
 
@@ -118,7 +118,7 @@ function add_panel(story){
       setTimeout(function () {
         new_panel.style.bottom = "0px";
         story.get_current_panel().play_sound();
-      }, 10);
+      }, 50);
       break;
   }
   new_panel.style.zIndex = "" + 10;
