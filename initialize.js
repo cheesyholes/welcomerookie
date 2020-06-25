@@ -4,6 +4,14 @@ function adjust_div(config, div){
   center_div.style.left = config['left_width'] + "px";
   center_div.style.width = config['width'] - config['left_width'] - config['right_width'] + "px";
   center_div.style.height = config['height'] - config['top_height'] - config['bot_height'] + "px";
+
+  let decision_div = div.querySelector("#decision");
+  if(decision_div){
+    decision_div.style.fontFamily = "loading_font";
+    decision_div.style.fontSize = Math.floor(config['decision_size'] * config['res']) + "px";
+    decision_div.style.top = (config['center_height'] + config['top_height']) + "px";
+    decision_div.children[1].innerText = config['decision_text'];
+  }
 }
 
 function adjust_panels(config){

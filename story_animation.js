@@ -71,6 +71,7 @@ function add_panel(story){
     c.style.height = new_panel.style.height;
   }
   
+  let decision = document.querySelector("#story #decision");
   switch(story.get_current_panel().transition.toLowerCase()){
     case "left":
       new_panel.style.left = story.main_config['center_width'] + story.main_config['min_lr'] + "px";
@@ -78,6 +79,12 @@ function add_panel(story){
       setTimeout(function () {
         new_panel.style.left = '0px';
         story.get_current_panel().play_sound();
+        if(!new_panel.single_choice){
+          decision.style.opacity = 1;
+        }
+        else{
+          decision.style.opacity = 0;
+        }
       }, 500);
       break;
     case "right":
@@ -86,6 +93,12 @@ function add_panel(story){
       setTimeout(function () {
         new_panel.style.right = '0px';
         story.get_current_panel().play_sound();
+        if (!new_panel.single_choice) {
+          decision.style.opacity = 1;
+        }
+        else {
+          decision.style.opacity = 0;
+        }
       }, 500);
       break;
     case "alpha":
@@ -95,6 +108,12 @@ function add_panel(story){
       setTimeout(function () {
         new_panel.style.opacity = 1;
         story.get_current_panel().play_sound();
+        if (!new_panel.single_choice) {
+          decision.style.opacity = 1;
+        }
+        else {
+          decision.style.opacity = 0;
+        }
       }, 500);
       break;
     case "zoom":
@@ -106,6 +125,12 @@ function add_panel(story){
         new_panel.style.opacity = 1;
         new_panel.style.transform = "scale(1)";
         story.get_current_panel().play_sound();
+        if (!new_panel.single_choice) {
+          decision.style.opacity = 1;
+        }
+        else {
+          decision.style.opacity = 0;
+        }
       }, 500);
       break;
     case "snap":
@@ -115,6 +140,12 @@ function add_panel(story){
       setTimeout(function () {
         new_panel.style.visibility = "visible";
         story.get_current_panel().play_sound();
+        if (!new_panel.single_choice) {
+          decision.style.opacity = 1;
+        }
+        else {
+          decision.style.opacity = 0;
+        }
       }, 600);
       break;
     default:
@@ -122,6 +153,12 @@ function add_panel(story){
       setTimeout(function () {
         new_panel.style.bottom = "0px";
         story.get_current_panel().play_sound();
+        if (!new_panel.single_choice) {
+          decision.style.opacity = 1;
+        }
+        else {
+          decision.style.opacity = 0;
+        }
       }, 50);
       break;
   }

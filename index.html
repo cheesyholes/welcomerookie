@@ -107,8 +107,44 @@
       }
       #decision{
         position: absolute;
+        transition: all 0.5s;
+        width: 100%;
+        text-align: center;
         color:#FFFFFF;
-        font-family: loadingFont;
+        padding-top: 10px;
+        opacity: 0;
+      }
+      #decision p{
+        display: inline-block;
+        margin: 0px;
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+      .movingchoice{
+        display: inline-block;
+        position: relative;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }
+      #movingright{
+        animation-name: wiggleright;
+      }
+      #movingleft{
+        animation-name: wiggleleft;
+      }
+      @keyframes wiggleleft {
+        0%   {left:-5px;}
+        25%   {left:0px;}
+        50%   {left:5px;}
+        75%   {left:0px;}
+        100%   {left:-5px;}
+      }
+      @keyframes wiggleright {
+        0%   {left:5px;}
+        25%   {left:0px;}
+        50%   {left:-5px;}
+        75%   {left:0px;}
+        100%   {left:5px;}
       }
       @font-face {
         font-family: loadingFont;
@@ -149,11 +185,11 @@
     </div>
     <div id="story">
       <div id="center"></div>
-      <!-- <div id="decision">
-        <img></p>
-        <div>Decision</div>
-        <img></p>
-      </div> -->
+      <div id="decision">
+        <div id="movingleft" class="movingchoice">&lt;</div>
+        <p>Decision</p>
+        <div id="movingright" class="movingchoice">&gt;</div>
+      </div>
     </div>
     <script type="text/javascript" src="menu_animation.js"></script>
     <script type="text/javascript" src="story_engine.js"></script>

@@ -20,8 +20,7 @@
   "menu_change": "menu/choice.wav",
   "menu_select": "menu/select.wav",
   "decision_text": "Decision",
-  "decision_font": "MISTRAL.TTF",
-  "decision_size": 0.05,
+  "decision_size": 0.15,
   "credits":[
     {
       "title": "Game By",
