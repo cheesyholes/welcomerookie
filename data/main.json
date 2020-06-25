@@ -6,7 +6,7 @@
   "inbet": 0.08,
   "zoom_in": 1.25,
   "shift_x": 5,
-  "shading_noeffect": 1,
+  "shading_noeffect": 0.6,
   "snap_percent": 0.7,
   "mouse_sensitivity": 0,
   "mouse_slow": 0,
@@ -25,32 +25,28 @@
       "name": ["Cheesy Holes"]
     },
     {
-      "title": "Story By",
-      "name": ["Omar Shoukry"]
+      "title": "Designed By",
+      "name": ["Omar Khaled"]
     },
     {
-      "title": "Engine By",
+      "title": "Developed By",
       "name": ["Ahmed Khalifa"]
     },
     {
       "title": "Art By",
-      "name": ["Artist Name1", "Artist Name2"]
+      "name": ["Gustav", "Adrian Iglesias"]
     },
     {
-      "title": "Font By",
-      "name": ["Font Designer Name"]
-    },
-    {
-      "title": "Sound By",
-      "name": ["Sound Designer Name"]
+      "title": "Written By",
+      "name": ["Omar Khaled"]
     },
     {
       "title": "Music By",
-      "name": ["Music Designer Name"]
+      "name": ["Kevin MacLeod"]
     },
     {
-      "title": "Testing By",
-      "name": ["Tester Name1", "Tester Name2", "Tester Name3", "Tester Name4"]
+      "title": "Graphics Lead",
+      "name": ["Hussein Essam"]
     }
   ],
   "chapters":[
