@@ -63,7 +63,7 @@ class Loader{
     clearCache(name){
       let todelete = [];
       for(let n in this._cache){
-        if(name in n){
+        if (n.indexOf(name) >= 0){
           todelete.push(n);
         }
       }
