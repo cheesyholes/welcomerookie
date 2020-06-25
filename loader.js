@@ -295,6 +295,7 @@ function exit_credits(){
 }
 
 function show_story(main_config, index){
+  // document.body.requestFullscreen();
   let loading = document.getElementById("loading");
   loading.style.display = "table";
   let menu_handler = function(e){

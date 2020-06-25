@@ -132,6 +132,11 @@
       #movingleft{
         animation-name: wiggleleft;
       }
+      #wrapper{
+        position: absolute;
+        padding: 0px;
+        margin: 0px;
+      }
       @keyframes wiggleleft {
         0%   {left:-5px;}
         25%   {left:0px;}
@@ -168,27 +173,29 @@
         <div id="names">AHMED KHALIFA</div>
       </div>
     </template>
-    <div id="loading">
-      <p id="loadingtext">loading</p>
-    </div>
-    <div id="menu">
-      <div id="center">
-        <div class="menutext" id="gamename"><p>WELCOME ROOKIE</p></div>
-        <div class="menutext" id="gamestart"><p>START STORY</p></div>
-        <div class="menutext" id="gamecredits"><p>CREDITS</p></div>
+    <div id="wrapper">
+      <div id="loading">
+        <p id="loadingtext">loading</p>
       </div>
-    </div>
-    <div id="credits">
-      <div id="center">
+      <div id="menu">
+        <div id="center">
+          <div class="menutext" id="gamename"><p>WELCOME ROOKIE</p></div>
+          <div class="menutext" id="gamestart"><p>START STORY</p></div>
+          <div class="menutext" id="gamecredits"><p>CREDITS</p></div>
+        </div>
       </div>
-      <div class="menutext" id="gameback"><p>EXIT</p></div>
-    </div>
-    <div id="story">
-      <div id="center"></div>
-      <div id="decision">
-        <div id="movingleft" class="movingchoice">&lt;</div>
-        <p>Decision</p>
-        <div id="movingright" class="movingchoice">&gt;</div>
+      <div id="credits">
+        <div id="center">
+        </div>
+        <div class="menutext" id="gameback"><p>EXIT</p></div>
+      </div>
+      <div id="story">
+        <div id="center"></div>
+        <div id="decision">
+          <div id="movingleft" class="movingchoice">&lt;</div>
+          <p>Decision</p>
+          <div id="movingright" class="movingchoice">&gt;</div>
+        </div>
       </div>
     </div>
     <script type="text/javascript" src="menu_animation.js"></script>

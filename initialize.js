@@ -12,6 +12,7 @@ function adjust_div(config, div){
     decision_div.style.color = config['decision_color']
     decision_div.style.top = (config['center_height'] + config['top_height']) + "px";
     decision_div.children[1].innerText = config['decision_text'];
+    decision_div.style.width = config['width'] + "px";
   }
 }
 
@@ -37,6 +38,21 @@ function adjust_panels(config){
 function onload(config){
   config['width'] = window.innerWidth;
   config['height'] = window.innerHeight;
+  document.getElementById("loading").style.width = config['width'];
+  document.getElementById("loading").style.height = config['height'];
   config['chapter_index'] = 0;
+  let resize = function () {
+    let wrapper = document.getElementById("wrapper");
+    let widthNoPadding = config['a_width'] * config['res'] + 2 * config['min_lr'];
+    let heightNoPadding = (2 + config['inbet']) * config['a_height'] * config['res'] + 2 * config['min_tb'];
+    let scale = Math.min(window.innerWidth / widthNoPadding, window.innerHeight / heightNoPadding);
+    wrapper.style.transform = "scale(" + scale + ")";
+    let shift_x = (window.innerWidth - config['width'] * scale) / 2;
+    let shift_y = (window.innerHeight - config['height'] * scale) / 2;
+    wrapper.style.top = shift_y + "px";
+    wrapper.style.left = shift_x + "px";
+  };
+  document.body.onresize = resize;
+  document.body.onfullscreenchange = resize;
   adjust_panels(config);
 }
