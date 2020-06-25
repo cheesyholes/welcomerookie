@@ -37,12 +37,16 @@
       "name": ["Gustav", "Adrian Iglesias"]
     },
     {
-	  "title": "Graphics by",
+	  "title": "Additional Graphics",
       "name": ["Hussein Essam"]
     },
     {
       "title": "Music By",
       "name": ["Kevin MacLeod"]
+    },
+    {
+      "title": "Sound Effects",
+      "name": ["InspectorJ of Freesound.org", "Wlabarron of Freesound.org", "Durek of Freesound.org", "Bertiehs of Freesound.org"]
     }
   ],
   "chapters":[
