@@ -9,6 +9,7 @@ function adjust_div(config, div){
   if(decision_div){
     decision_div.style.fontFamily = "loading_font";
     decision_div.style.fontSize = Math.floor(config['decision_size'] * config['res']) + "px";
+    decision_div.style.color = config['decision_color']
     decision_div.style.top = (config['center_height'] + config['top_height']) + "px";
     decision_div.children[1].innerText = config['decision_text'];
   }

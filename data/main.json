@@ -21,6 +21,7 @@
   "menu_select": "menu/select.wav",
   "decision_text": "Decision",
   "decision_size": 0.15,
+  "decision_color": "#BBBBBB",
   "credits":[
     {
       "title": "Game By",

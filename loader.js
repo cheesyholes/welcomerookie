@@ -334,6 +334,8 @@ function show_story(main_config, index){
 
 function restart_story(story){
   story.stop_music();
+  let decision = document.querySelector("#story #decision");
+  decision.style.opacity = 0;
   let loading = document.getElementById("loading");
   loading.style.display = "table";
   let story_handler = function(e){
@@ -354,6 +356,8 @@ function restart_story(story){
 
 function exit_story(story){
   story.stop_music();
+  let decision = document.querySelector("#story #decision");
+  decision.style.opacity = 0;
   let loading = document.getElementById("loading");
   loading.style.display = "table";
   let story_handler = function(e){
